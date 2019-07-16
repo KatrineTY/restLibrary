@@ -3,12 +3,11 @@ package com.spring.mvc.repository;
 import com.github.javafaker.Faker;
 import com.spring.mvc.component.Book;
 import com.spring.mvc.dao.LibraryDao;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 public class DummyDao implements LibraryDao {
 
     Faker faker = new Faker();
