@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-info text-center">Welcome to the library</h1>
+  <hr />
+
+  <div class="input-group mb-3  w-25">
+    <input type="text" class="form-control" placeholder="Author's filter" (keyup)="filterAuthors($event.target.value)">
+  </div>
+
+  <div *ngIf="books">
+    <table class="table table-bordered table-hover" id="bookTable">
+      <thead>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Count</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.name}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.genre}}</td>
+          <td>{{book.count}}</td>
+          <td><button type="button" class="btn btn-light" (click)="takeBook(book.id)">Take book</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
