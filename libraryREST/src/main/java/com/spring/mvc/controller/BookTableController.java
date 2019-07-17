@@ -30,4 +30,10 @@ public class BookTableController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping(value = "/books", method = RequestMethod.POST)
+    public void addBook(@RequestBody Book book) {
+        libraryDao.addBook(book);
+    }
+
 }

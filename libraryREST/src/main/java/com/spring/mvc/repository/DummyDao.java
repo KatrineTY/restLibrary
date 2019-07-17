@@ -14,7 +14,7 @@ public class DummyDao implements LibraryDao {
     List<Book> bookList = new ArrayList<Book>();
 
     public DummyDao() {
-        for (int i = 1; i <= 25; i++) {
+        for (int i = 1; i <= 5; i++) {
             Book book = new Book();
             book.setId(i);
             book.setName(faker.book().title());
@@ -36,6 +36,11 @@ public class DummyDao implements LibraryDao {
                 book.setCount(book.getCount() - 1);
             }
         }
+    }
+
+    @Override
+    public void addBook(Book book) {
+        bookList.add(book);
     }
 
 }

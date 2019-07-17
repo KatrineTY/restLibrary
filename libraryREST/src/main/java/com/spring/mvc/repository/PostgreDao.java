@@ -40,4 +40,13 @@ public class PostgreDao implements LibraryDao {
         session.close();
     }
 
+    @Override
+    public void addBook(Book book) {
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        session.save(book);
+        session.getTransaction().commit();
+        session.close();
+    }
+
 }

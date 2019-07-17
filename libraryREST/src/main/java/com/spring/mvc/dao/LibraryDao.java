@@ -9,4 +9,6 @@ public interface LibraryDao {
 
     void takeBook(int bookId);
 
+    void addBook(Book book);
+
 }
